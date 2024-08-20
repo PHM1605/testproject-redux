@@ -33,7 +33,7 @@ export const counterSlice = createSlice({
       state.status = 'loading'
     })
     .addCase(incrementAsync.fulfilled, (state, action) => {
-      state.status = 'idle',
+      state.status = 'idle';
       state.value += action.payload
     })
     .addCase(incrementAsync.rejected, state =>{

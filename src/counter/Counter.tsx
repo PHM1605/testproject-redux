@@ -7,7 +7,7 @@ export const Counter = () => {
   const count = useAppSelector(selectCount);
   const status = useAppSelector(selectStatus);
   const [incrementAmount, setIncrementAmount] = useState("2");
-  const incrementValue = Number(increment) || 0;
+  const incrementValue = Number(incrementAmount) || 0;
 
   return (
     <div>
@@ -37,7 +37,9 @@ export const Counter = () => {
       </div>
 
       <div className="row">
-        <button className="asyncButton" disabled={status !== "idle"} onClick={()=>{dispatch(incrementAsync(incrementValue))}}>
+        <button className="asyncButton" disabled={status !== "idle"} onClick={()=>{
+          dispatch(incrementAsync(incrementValue))
+        }}>
           Add Async
         </button>
         <button className="oddButton" onClick={() => {
